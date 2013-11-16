@@ -11,18 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131116202922) do
+ActiveRecord::Schema.define(:version => 20131116214244) do
 
   create_table "infomercial_ipsum_requests", :force => true do |t|
     t.integer  "number_of_paragraphs"
     t.boolean  "billy_mayes_mode"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
-  end
-
-  create_table "paragraphs", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "phrases", :force => true do |t|
