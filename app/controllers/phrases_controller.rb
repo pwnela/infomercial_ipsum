@@ -60,7 +60,7 @@ class PhrasesController < ApplicationController
     if phrase_importer.import
       redirect_to phrases_url
     else
-      redirect_to phrases_import_from_paragraph_url
+      redirect_to bulk_import_path
     end
   end
 
