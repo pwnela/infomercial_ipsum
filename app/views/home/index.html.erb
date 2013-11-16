@@ -1,0 +1,11 @@
+<h1>Do you need some Infomercial Ipsum? Of course you do!</h1>
+
+<%= form_tag url_for(controller: "/home", action: "get_infomercial_ipsum"), method: :post %>
+  <div class="field">
+
+  How many paragraphs? <%= select_tag 'number_of_paragraphs', options_for_select((1..10).collect{|i| [i,i]}) %>
+</div>
+  <%= submit_tag 'Act Now!' %></br></br></br>
+
+  <%= link_to 'Add Phrase(s)', new_phrase_path %>
+

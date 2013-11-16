@@ -9,5 +9,6 @@ class Paragraph
         paragraph_text += phrase.phrase_text if phrase.present?
       end
     }
+    paragraph_text
   end
 end

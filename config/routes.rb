@@ -3,6 +3,8 @@ Infomercialipsum::Application.routes.draw do
 
   get "/bulk_import" => "phrases#bulk_import", as: "bulk_import"
   post "/import_from_paragraph" => "phrases#import_from_paragraph", as: "import_from_paragraph"
+  post "/get_infomercial_ipsum" => "home#get_infomercial_ipsum", as: "get_infomercial_ipsum"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -53,7 +55,7 @@ Infomercialipsum::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
