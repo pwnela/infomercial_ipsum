@@ -1,0 +1,6 @@
+<%= form_tag url_for(controller: "/phrases", action: "import_from_paragraph"), method: :post %>
+  <div class="field">
+
+  <%= text_area_tag 'paragraph', "", placeholder: "Add Paragraph",  cols: "40", rows: "20" %>
+</div>
+  <%= submit_tag 'Import Phrases' %>

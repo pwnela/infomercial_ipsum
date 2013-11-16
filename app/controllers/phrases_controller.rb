@@ -53,6 +53,17 @@ class PhrasesController < ApplicationController
     end
   end
 
+  def import_from_paragraph
+    paragraph = params[:paragraph]
+    phrase_importer = PhraseImporter.new(paragraph)
+    
+    if phrase_importer.import
+      redirect_to phrases_url
+    else
+      redirect_to phrases_import_from_paragraph_url
+    end
+  end
+
   # PUT /phrases/1
   # PUT /phrases/1.json
   def update

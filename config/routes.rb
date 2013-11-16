@@ -1,6 +1,8 @@
 Infomercialipsum::Application.routes.draw do
   resources :phrases
 
+  get "/bulk_import" => "phrases#bulk_import", as: "bulk_import"
+  post "/import_from_paragraph" => "phrases#import_from_paragraph", as: "import_from_paragraph"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

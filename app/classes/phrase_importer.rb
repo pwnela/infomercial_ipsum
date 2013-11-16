@@ -7,7 +7,9 @@ class PhraseImporter
   end
 
   def import
-    @text_chunk.split(/[.?!]/).each do |phrase|
+    phrases = @text_chunk.gsub(/[.?!]/, '\0|') 
+
+    phrases.split("|").each do |phrase|
       Phrase.create(phrase_text: phrase)
     end 
   end
