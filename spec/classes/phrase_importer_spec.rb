@@ -10,4 +10,14 @@ describe PhraseImporter do
 
     expect{phrase_importer.import}.to change{Phrase.count}.by(5)
   end
+
+  it 'detects billy mayes mode correctly' do
+    text_chunk = "But call in the next 20 minutes, and we\'ll super size your OxiClean from a two-and-a-half 
+                  pound tub to a whopping six-pound bucket! Nearly triple the amount, but you got to call now! Here\'s how to order."
+
+    PhraseImporter.new(text_chunk).import
+
+    Phrase.where(billy_mayes_mode: true).count.should == 2
+    Phrase.where(billy_mayes_mode: false).count.should == 1
+  end
 end
